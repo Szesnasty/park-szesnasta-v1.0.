@@ -1,12 +1,17 @@
 import React from 'react';
-import { Users } from '@park-szesnasta/users';
+import { UsersManagement } from '@park-szesnasta/users-management';
 import { Route, Switch } from 'react-router-dom';
-import { Routes } from './../constant/routes';
+import { Routes } from './../constants/routes';
 
 export const RouterManager = () => {
   return (
     <Switch>
-      <Route path={Routes.Home.path} exact component={Users} />
+      <Route path={Routes.Home.path} exact component={() => <h1>Home</h1>} />
+      <Route
+        path={Routes.UsersManagement.path}
+        exact
+        component={UsersManagement}
+      />
     </Switch>
   );
 };
