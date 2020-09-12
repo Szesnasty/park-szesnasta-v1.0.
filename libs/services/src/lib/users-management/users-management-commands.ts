@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { CreateNewUserRequestModel } from '@park-szesnasta/utilities';
-import { ADD_NEW_USER_URL } from './users-management-api';
+import { ADD_NEW_USER_URL, DELETE_USER_URL } from './users-management-api';
 
 export class UsersManagementCommands {
   URL_API: string;
@@ -14,4 +14,9 @@ export class UsersManagementCommands {
       .then((res) => {
         console.log(res);
       });
+
+  RemoveUser = (requestQuery: { id: string }) =>
+    axios.delete<any>(`${this.URL_API}/${DELETE_USER_URL}`, {
+      data: requestQuery,
+    });
 }
