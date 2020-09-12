@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { CreateNewUserRequestModel } from '@park-szesnasta/utilities';
 import { ADD_NEW_USER_URL } from './users-management-api';
 
 export class UsersManagementCommands {
@@ -8,7 +8,7 @@ export class UsersManagementCommands {
     this.URL_API = process.env.NX_URL_API;
   }
 
-  CreateNewUser = (requestQuery: any) =>
+  CreateNewUser = (requestQuery: CreateNewUserRequestModel) =>
     axios
       .post<any>(`${this.URL_API}/${ADD_NEW_USER_URL}`, requestQuery)
       .then((res) => {
