@@ -4,6 +4,7 @@ import { StylesProvider } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from 'styled-components';
+import { MainTheme } from '@park-szesnasta/utilities';
 
 export const App = () => {
   return (
