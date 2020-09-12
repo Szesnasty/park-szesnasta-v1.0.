@@ -5,3 +5,5 @@ export type CreateNewUserRequestModel = {
   nazwisko: string;
   haslo: string;
 };
+
+export type GetUsersListResponseModel = CreateNewUserRequestModel;
