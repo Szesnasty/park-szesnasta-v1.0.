@@ -39,7 +39,7 @@ export const useUsersManagementFormFacade = () => {
       .then((res) => {
         console.log(res);
       })
-      .catch((err) => {});
+      .catch((err) => {console.log(err)});
 
     formikHelpers.setSubmitting(false);
     formikHelpers.resetForm();
