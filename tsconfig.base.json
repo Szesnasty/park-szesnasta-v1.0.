@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@park-szesnasta/users": ["libs/users/src/index.ts"]
+      "@park-szesnasta/users": ["libs/users/src/index.ts"],
+      "@park-szesnasta/utilities": ["libs/utilities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
