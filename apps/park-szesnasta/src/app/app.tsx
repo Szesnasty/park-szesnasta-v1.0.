@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { MainTheme, RouterManager } from '@park-szesnasta/utilities';
 
 export const App = () => {
+  console.log(process.env.NX_URL_API);
   return (
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={MainTheme}>
