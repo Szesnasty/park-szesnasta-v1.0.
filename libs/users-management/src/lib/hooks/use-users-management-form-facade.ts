@@ -2,6 +2,7 @@ import * as yup from 'yup';
 import { UsersManagementCommands } from '@park-szesnasta/services';
 import { FormikHelpers } from 'formik/dist/types';
 import { REQUIRED_FIELD } from '@park-szesnasta/utilities';
+import { notificationsDispatch } from '@park-szesnasta/components';
 
 type UseUsersManagementFormFacadeProps = {};
 
@@ -37,9 +38,17 @@ export const useUsersManagementFormFacade = () => {
     usersManagementCommands
       .CreateNewUser(newUser)
       .then((res) => {
-        console.log(res);
+        notificationsDispatch({
+          msg: `Stworzono nowego usera!`,
+          variant: 'success',
+        });
       })
-      .catch((err) => {console.log(err)});
+      .catch((err) => {
+        notificationsDispatch({
+          msg: `Coś poszło nie tak...`,
+          variant: 'error',
+        });
+      });
 
     formikHelpers.setSubmitting(false);
     formikHelpers.resetForm();

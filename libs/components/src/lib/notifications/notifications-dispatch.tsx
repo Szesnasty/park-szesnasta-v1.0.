@@ -5,17 +5,17 @@ import {
   SettingsNotificationsModel,
 } from '@park-szesnasta/utilities';
 
-type useNotificationProps = {
+type NotificationsDispatchProps = {
   msg: MsgNotificationType;
   variant?: VariantNotificationType;
   settings?: SettingsNotificationsModel;
 };
 
-export const useNotification = ({
+export const notificationsDispatch = ({
   msg,
   variant,
   settings,
-}: useNotificationProps) => {
+}: NotificationsDispatchProps) => {
   let currentToast;
   const currentMsg = msg ? msg : '';
 
