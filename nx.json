@@ -40,6 +40,9 @@
     },
     "services": {
       "tags": []
+    },
+    "users-management": {
+      "tags": []
     }
   }
 }
