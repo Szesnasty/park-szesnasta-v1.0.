@@ -28,6 +28,9 @@
     "park-szesnasta-e2e": {
       "tags": [],
       "implicitDependencies": ["park-szesnasta"]
+    },
+    "users": {
+      "tags": []
     }
   }
 }
