@@ -37,6 +37,9 @@
     },
     "components": {
       "tags": []
+    },
+    "services": {
+      "tags": []
     }
   }
 }
