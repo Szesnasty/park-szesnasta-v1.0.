@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "projects": {
+    "park-szesnasta": {
+      "root": "apps/park-szesnasta",
+      "sourceRoot": "apps/park-szesnasta/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/park-szesnasta",
+            "index": "apps/park-szesnasta/src/index.html",
+            "main": "apps/park-szesnasta/src/main.tsx",
+            "polyfills": "apps/park-szesnasta/src/polyfills.ts",
+            "tsConfig": "apps/park-szesnasta/tsconfig.app.json",
+            "assets": [
+              "apps/park-szesnasta/src/favicon.ico",
+              "apps/park-szesnasta/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/park-szesnasta/src/environments/environment.ts",
+                  "with": "apps/park-szesnasta/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "park-szesnasta:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "park-szesnasta:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/park-szesnasta/tsconfig.app.json",
+              "apps/park-szesnasta/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/park-szesnasta/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/park-szesnasta/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "park-szesnasta-e2e": {
+      "root": "apps/park-szesnasta-e2e",
+      "sourceRoot": "apps/park-szesnasta-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/park-szesnasta-e2e/cypress.json",
+            "tsConfig": "apps/park-szesnasta-e2e/tsconfig.e2e.json",
+            "devServerTarget": "park-szesnasta:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "park-szesnasta:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/park-szesnasta-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/park-szesnasta-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {
+    "@nrwl/react": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "styled-components"
+      },
+      "library": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "park-szesnasta"
+}
