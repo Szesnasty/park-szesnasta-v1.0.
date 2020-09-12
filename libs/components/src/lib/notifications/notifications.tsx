@@ -16,15 +16,15 @@ export const Notifications = ({
 }: SettingsNotificationsModel) => {
   return (
     <ToastContainer
-      position={position ? position : 'bottom-left'}
-      autoClose={autoClose ? autoClose : 5000}
-      hideProgressBar={hideProgressBar ? hideProgressBar : false}
-      newestOnTop={newestOnTop ? newestOnTop : false}
-      closeOnClick={closeOnClick ? closeOnClick : true}
-      rtl={rtl ? rtl : false}
-      pauseOnFocusLoss={pauseOnFocusLoss ? pauseOnFocusLoss : true}
-      draggable={draggable ? draggable : true}
-      pauseOnHover={pauseOnHover ? pauseOnHover : true}
+      position={position ?? 'bottom-left'}
+      autoClose={autoClose ?? 5000}
+      hideProgressBar={hideProgressBar ?? false}
+      newestOnTop={newestOnTop ?? false}
+      closeOnClick={closeOnClick ?? true}
+      rtl={rtl ?? false}
+      pauseOnFocusLoss={pauseOnFocusLoss ?? true}
+      draggable={draggable ?? true}
+      pauseOnHover={pauseOnHover ?? true}
     />
   );
 };
