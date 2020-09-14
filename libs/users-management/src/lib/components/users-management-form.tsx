@@ -6,14 +6,18 @@ import { useUsersManagementFormFacade } from '../hooks/use-users-management-form
 import { InitialDataModel } from '../hooks/use-users-management-form-facade';
 import { RenderUsersManagementForm } from './render-users-management-form';
 
-type UsersManagementFormProps = {};
+type UsersManagementFormProps = {
+  tableRef: React.MutableRefObject<any>;
+};
 
-export const UsersManagementForm: FunctionComponent<UsersManagementFormProps> = () => {
+export const UsersManagementForm: FunctionComponent<UsersManagementFormProps> = ({
+  tableRef,
+}) => {
   const {
     initialValues,
     validationSchema,
     handleSubmitForm,
-  } = useUsersManagementFormFacade();
+  } = useUsersManagementFormFacade({ tableRef });
 
   return (
     <StyledUserManagement>

@@ -13,7 +13,7 @@ const validationSchema = yup.object<InitialDataModel>({
   haslo: yup.string().required(REQUIRED_FIELD),
 });
 
-export const useUsersManagementFormFacade = () => {
+export const useUsersManagementFormFacade = ({ tableRef }) => {
   const initialValues = {
     email: 'Adam',
     imie: 'Ostrowski',
@@ -42,6 +42,9 @@ export const useUsersManagementFormFacade = () => {
           msg: `Stworzono nowego usera!`,
           variant: 'success',
         });
+        if (tableRef.current != null) {
+          tableRef?.current.onQueryChange();
+        }
       })
       .catch((err) => {
         notificationsDispatch({

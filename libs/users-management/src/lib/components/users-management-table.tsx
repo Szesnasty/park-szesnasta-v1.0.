@@ -6,12 +6,22 @@ import { tableIcons } from '@park-szesnasta/components';
 import { GetUsersListResponseModel } from '@park-szesnasta/utilities';
 import { useUsersManagementTableFacade } from './../hooks/use-users-management-table-facade';
 
-export const UsersManagementTable = () => {
+type UsersManagementTableProps = {
+  tableRef: React.MutableRefObject<any>;
+};
+export const UsersManagementTable = ({
+  tableRef,
+}: UsersManagementTableProps) => {
   const { columns } = useUsersManagementTableFacade();
   const usersManagementQuery = new UsersManagementQuery();
+
+  if (tableRef.current != null) {
+    tableRef?.current.onQueryChange();
+  }
+
   return (
     <MaterialTable<GetUsersListResponseModel>
-      tableRef={null}
+      tableRef={tableRef}
       icons={tableIcons}
       title="Firma"
       columns={columns}
@@ -23,7 +33,7 @@ export const UsersManagementTable = () => {
               resolve({
                 data: res.data,
                 page: 1,
-                totalCount: res.data.length,
+                totalCount: 22,
               });
             })
             .catch((err) => reject(err));
