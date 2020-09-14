@@ -2,7 +2,7 @@ import axios from 'axios';
 import { GetUsersListResponseModel } from '@park-szesnasta/utilities';
 import { GET_USERS_LIST_URL } from './users-management-api';
 
-export class UserManagementQuery {
+export class UsersManagementQuery {
   URL_API: string;
   constructor() {
     this.URL_API = process.env.NX_URL_API;
