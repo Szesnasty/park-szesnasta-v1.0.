@@ -10,7 +10,7 @@ export class UsersManagementQuery {
 
   GetUsers = () =>
     axios
-      .get<GetUsersListResponseModel>(`${this.URL_API}/${GET_USERS_LIST_URL}`)
+      .get<GetUsersListResponseModel[]>(`${this.URL_API}/${GET_USERS_LIST_URL}`)
       .then((res) => {
         return res;
       });
