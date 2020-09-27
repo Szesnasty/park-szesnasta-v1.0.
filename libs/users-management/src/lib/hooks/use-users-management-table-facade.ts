@@ -11,7 +11,7 @@ export const useUsersManagementTableFacade = () => {
     { title: 'Nazwisko', field: 'nazwisko' },
   ];
 
-  const getData = () => {
+  const getData = (query) => {
     return new Promise<QueryResult<GetUsersListResponseModel>>(
       (resolve, reject) => {
         usersManagementQuery

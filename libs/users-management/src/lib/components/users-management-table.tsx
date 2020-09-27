@@ -24,7 +24,7 @@ export const UsersManagementTable = ({
       icons={tableIcons}
       title="Firma"
       columns={columns}
-      data={(query) => getData()}
+      data={(query) => getData(query)}
     />
   );
 };

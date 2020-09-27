@@ -1,7 +1,7 @@
 import React from 'react';
 import { UsersManagement } from '@park-szesnasta/users-management';
 import { Route, Switch } from 'react-router-dom';
-import { Routes } from './../constants/routes';
+import { Routes } from '@park-szesnasta/utilities';
 
 export const RouterManager = () => {
   return (

@@ -5,8 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from 'styled-components';
-import { MainTheme, RouterManager } from '@park-szesnasta/utilities';
+import { MainTheme } from '@park-szesnasta/utilities';
 import { Notifications } from '@park-szesnasta/components';
+import { RouterManager } from './router-manager';
 
 export const App = () => {
   console.log(process.env.NX_URL_API);
