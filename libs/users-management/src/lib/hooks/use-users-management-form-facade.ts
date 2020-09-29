@@ -7,18 +7,14 @@ import { notificationsDispatch } from '@park-szesnasta/components';
 type UseUsersManagementFormFacadeProps = {};
 
 const validationSchema = yup.object<InitialDataModel>({
-  imie: yup.string().required(REQUIRED_FIELD),
-  nazwisko: yup.string().required(REQUIRED_FIELD),
+  name: yup.string().required(REQUIRED_FIELD),
   email: yup.string().required(REQUIRED_FIELD),
-  haslo: yup.string().required(REQUIRED_FIELD),
 });
 
 export const useUsersManagementFormFacade = ({ tableRef }) => {
   const initialValues = {
-    email: 'Adam',
-    imie: 'Ostrowski',
-    nazwisko: 'Nazwisko',
-    haslo: 'dwed',
+    email: '',
+    name: '',
   };
 
   const usersManagementCommands = new UsersManagementCommands();
@@ -28,10 +24,8 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
     formikHelpers: FormikHelpers<InitialDataModel>
   ) => {
     const newUser = {
-      imie: values.imie,
-      nazwisko: values.nazwisko,
+      name: values.name,
       email: values.email,
-      haslo: values.haslo,
     };
     formikHelpers.setSubmitting(true);
 
@@ -62,8 +56,6 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
 
 export type InitialDataModel = {
   id?: string;
+  name: string;
   email: string;
-  imie: string;
-  nazwisko: string;
-  haslo: string;
 };

@@ -2,7 +2,6 @@ import axios from 'axios';
 import { GetUsersListResponseModel } from '@park-szesnasta/utilities';
 import { GET_USERS_LIST_URL } from './users-management-api';
 
-
 export class UsersManagementQuery {
   URL_API: string;
   constructor() {
@@ -11,9 +10,7 @@ export class UsersManagementQuery {
 
   GetUsers = () =>
     axios
-      .get<GetUsersListResponseModel[]>(
-        `${this.URL_API}/${GET_USERS_LIST_URL}`
-      )
+      .get<GetUsersListResponseModel[]>(`${this.URL_API}/${GET_USERS_LIST_URL}`)
       .then((res) => {
         return res;
       });

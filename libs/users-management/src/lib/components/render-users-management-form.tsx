@@ -23,38 +23,17 @@ export const RenderUsersManagementForm = () => {
         }}
       >
         <InputForm
-          value={values.imie}
+          value={values.name}
           type={'input'}
           id={'imie'}
-          name={'imie'}
+          name={'name'}
           label={'Imię'}
         />
-        <InputForm
-          value={values.nazwisko}
-          id={'nazwisko'}
-          name={'nazwisko'}
-          label={'Nazwisko'}
-        />
-      </div>
-      <div
-        style={{
-          display: 'grid',
-          gridGap: '2rem',
-          gridTemplateColumns: '1fr 1fr',
-        }}
-      >
         <InputForm
           value={values.email}
           id={'email'}
           name={'email'}
           label={'Email'}
-        />
-        <InputForm
-          value={values.haslo}
-          id={'haslo'}
-          name={'haslo'}
-          label={'Hasło'}
-          type={'text'}
         />
       </div>
 
