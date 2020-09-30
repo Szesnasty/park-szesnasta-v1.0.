@@ -1,7 +1,7 @@
 import { InputForm, ButtonForm } from '@park-szesnasta/components';
 import * as React from 'react';
 import { useFormikContext, Form } from 'formik';
-import { InitialDataModel } from '../hooks/use-users-management-form-facade';
+import { InitialDataModel } from '../hooks/use-login-user-form-facade';
 
 export type RenderLoginUserFormProps = {};
 
@@ -23,7 +23,7 @@ export const RenderLoginUserForm = () => {
         }}
       >
         <InputForm
-          value={values.name}
+          value={values.email}
           id={'email'}
           name={'email'}
           label={'Email'}

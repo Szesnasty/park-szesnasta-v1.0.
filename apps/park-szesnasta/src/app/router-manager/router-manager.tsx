@@ -1,5 +1,6 @@
 import React from 'react';
 import { UsersManagement } from '@park-szesnasta/users-management';
+import { Login } from '@park-szesnasta/login';
 import { Route, Switch } from 'react-router-dom';
 import { Routes } from '@park-szesnasta/utilities';
 
@@ -12,6 +13,7 @@ export const RouterManager = () => {
         exact
         component={UsersManagement}
       />
+      <Route path={Routes.Login.path} exact component={Login} />
     </Switch>
   );
 };

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 
 import styled from 'styled-components';
@@ -6,13 +6,9 @@ import { useLoginUserFormFacade } from '../hooks/use-login-user-form-facade';
 import { InitialDataModel } from '../hooks/use-login-user-form-facade';
 import { RenderLoginUserForm } from './render-login-user-form';
 
-type LoginUserFormProps = {
-  tableRef: React.MutableRefObject<any>;
-};
+type LoginUserFormProps = {};
 
-export const LoginUserForm: FunctionComponent<LoginUserFormProps> = ({
-  tableRef,
-}) => {
+export const LoginUserForm = (props: LoginUserFormProps) => {
   const {
     initialValues,
     validationSchema,

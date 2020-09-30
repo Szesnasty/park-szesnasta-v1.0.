@@ -1,11 +1,6 @@
 import React, { useRef } from 'react';
-import { UsersManagementForm } from './../components/users-management-form';
-import { UsersManagementTable } from './../components/users-management-table';
+import { LoginUserForm } from './../components/login-user-form';
 
 export const Login = () => {
-  return (
-    <>
-      <LoginUserForm />
-    </>
-  );
+  return <LoginUserForm />;
 };

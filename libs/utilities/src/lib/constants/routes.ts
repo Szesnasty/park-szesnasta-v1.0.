@@ -9,4 +9,9 @@ export const Routes = {
     name: 'users',
     viewId: 'USERS',
   },
+  Login: {
+    path: '/login',
+    name: 'login',
+    viewId: 'LOGIN',
+  },
 };
