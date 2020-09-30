@@ -7,8 +7,8 @@ import { notificationsDispatch } from '@park-szesnasta/components';
 type useLoginUserFormFacadeProps = {};
 
 const validationSchema = yup.object<InitialDataModel>({
-  name: yup.string().required(REQUIRED_FIELD),
   email: yup.string().required(REQUIRED_FIELD),
+  password: yup.string().required(REQUIRED_FIELD),
 });
 
 export const useLoginUserFormFacade = () => {

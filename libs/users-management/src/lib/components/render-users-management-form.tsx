@@ -19,7 +19,7 @@ export const RenderUsersManagementForm = () => {
         style={{
           display: 'grid',
           gridGap: '2rem',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: '1fr 1fr 1fr',
         }}
       >
         <InputForm
@@ -34,6 +34,13 @@ export const RenderUsersManagementForm = () => {
           id={'email'}
           name={'email'}
           label={'Email'}
+        />
+        <InputForm
+          value={values.email}
+          id={'passworrd'}
+          name={'password'}
+          type={'password'}
+          label={'Password'}
         />
       </div>
 

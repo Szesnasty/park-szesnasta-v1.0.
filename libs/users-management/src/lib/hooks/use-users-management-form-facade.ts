@@ -9,12 +9,14 @@ type UseUsersManagementFormFacadeProps = {};
 const validationSchema = yup.object<InitialDataModel>({
   name: yup.string().required(REQUIRED_FIELD),
   email: yup.string().required(REQUIRED_FIELD),
+  password: yup.string().required(REQUIRED_FIELD),
 });
 
 export const useUsersManagementFormFacade = ({ tableRef }) => {
   const initialValues = {
     email: '',
     name: '',
+    password: '',
   };
 
   const usersManagementCommands = new UsersManagementCommands();
@@ -26,6 +28,7 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
     const newUser = {
       name: values.name,
       email: values.email,
+      password: values.password,
     };
     formikHelpers.setSubmitting(true);
 
@@ -58,4 +61,5 @@ export type InitialDataModel = {
   id?: string;
   name: string;
   email: string;
+  password: string;
 };
