@@ -20,7 +20,10 @@
       "@park-szesnasta/utilities": ["libs/utilities/src/index.ts"],
       "@park-szesnasta/components": ["libs/components/src/index.ts"],
       "@park-szesnasta/services": ["libs/services/src/index.ts"],
-      "@park-szesnasta/users-management": ["libs/users-management/src/index.ts"]
+      "@park-szesnasta/users-management": [
+        "libs/users-management/src/index.ts"
+      ],
+      "@park-szesnasta/login": ["libs/login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

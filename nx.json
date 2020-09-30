@@ -43,6 +43,9 @@
     },
     "users-management": {
       "tags": []
+    },
+    "login": {
+      "tags": []
     }
   }
 }
