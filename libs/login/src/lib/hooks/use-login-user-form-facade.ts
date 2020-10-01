@@ -3,6 +3,7 @@ import { LoginCommands } from '@park-szesnasta/services';
 import { FormikHelpers } from 'formik/dist/types';
 import { REQUIRED_FIELD } from '@park-szesnasta/utilities';
 import { notificationsDispatch } from '@park-szesnasta/components';
+import { useHistory } from 'react-router-dom';
 
 type useLoginUserFormFacadeProps = {};
 
@@ -12,6 +13,7 @@ const validationSchema = yup.object<InitialDataModel>({
 });
 
 export const useLoginUserFormFacade = () => {
+  const history = useHistory();
   const initialValues = {
     email: '',
     password: '',
@@ -32,12 +34,18 @@ export const useLoginUserFormFacade = () => {
     loginCommands
       .LoginUser(userLoginData)
       .then((res) => {
+        const accessToken = res.data?.access_token;
+        const userLogged = 'true';
+        localStorage.setItem('access-token', accessToken);
+        localStorage.setItem('user-logged', userLogged);
+        history.push('/');
         notificationsDispatch({
           msg: `Zalogowano!`,
           variant: 'success',
         });
       })
       .catch((err) => {
+        console.log(err);
         notificationsDispatch({
           msg: `Coś poszło nie tak...`,
           variant: 'error',

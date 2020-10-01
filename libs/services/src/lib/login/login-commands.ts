@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { LoginRequestModel } from '@park-szesnasta/utilities';
+import {
+  LoginRequestModel,
+  LoginResponseModel,
+} from '@park-szesnasta/utilities';
 import { LOGIN_URL } from './login-api';
 
 export class LoginCommands {
@@ -9,9 +12,8 @@ export class LoginCommands {
   }
 
   LoginUser = (requestQuery: LoginRequestModel) =>
-    axios
-      .post<any>(`${this.URL_API}/${LOGIN_URL}`, requestQuery)
-      .then((res) => {
-        console.log(res);
-      });
+    axios.post<LoginResponseModel>(
+      `${this.URL_API}/${LOGIN_URL}`,
+      requestQuery
+    );
 }
