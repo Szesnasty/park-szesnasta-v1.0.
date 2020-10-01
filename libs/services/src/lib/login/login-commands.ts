@@ -4,6 +4,13 @@ import {
   LoginResponseModel,
 } from '@park-szesnasta/utilities';
 import { LOGIN_URL } from './login-api';
+import { Post } from './../axios-config/axios-methods';
+type TestingRequestModel = {
+  id: string;
+};
+type TestingResponseModel = {
+  access_token: string;
+};
 
 export class LoginCommands {
   URL_API: string;
@@ -16,4 +23,11 @@ export class LoginCommands {
       `${this.URL_API}/${LOGIN_URL}`,
       requestQuery
     );
+
+  TestToken = (requestQuery: TestingRequestModel) => {
+    return Post<TestingRequestModel, TestingResponseModel>(
+      'token_test',
+      requestQuery
+    );
+  };
 }
