@@ -16,6 +16,7 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
   const initialValues = {
     email: '',
     name: '',
+    surname: '',
     password: '',
   };
 
@@ -28,6 +29,7 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
     const newUser = {
       name: values.name,
       email: values.email,
+      surname: values.surname,
       password: values.password,
     };
     formikHelpers.setSubmitting(true);
@@ -60,6 +62,7 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
 export type InitialDataModel = {
   id?: string;
   name: string;
+  surname: string;
   email: string;
   password: string;
 };

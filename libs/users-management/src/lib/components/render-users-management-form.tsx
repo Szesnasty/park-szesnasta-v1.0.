@@ -19,7 +19,7 @@ export const RenderUsersManagementForm = () => {
         style={{
           display: 'grid',
           gridGap: '2rem',
-          gridTemplateColumns: '1fr 1fr 1fr',
+          gridTemplateColumns: '1fr 1fr',
         }}
       >
         <InputForm
@@ -27,10 +27,24 @@ export const RenderUsersManagementForm = () => {
           type={'input'}
           id={'imie'}
           name={'name'}
-          label={'Imię'}
+          label={'Name'}
         />
         <InputForm
-          value={values.email}
+          value={values.surname}
+          id={'surname'}
+          name={'surname'}
+          label={'Surname'}
+        />
+      </div>
+      <div
+        style={{
+          display: 'grid',
+          gridGap: '2rem',
+          gridTemplateColumns: '1fr 1fr',
+        }}
+      >
+        <InputForm
+          value={values.surname}
           id={'email'}
           name={'email'}
           label={'Email'}
@@ -43,7 +57,6 @@ export const RenderUsersManagementForm = () => {
           label={'Password'}
         />
       </div>
-
       <div
         style={{
           justifyContent: 'flex-end',

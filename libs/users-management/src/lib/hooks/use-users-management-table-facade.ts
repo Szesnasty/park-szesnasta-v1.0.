@@ -6,8 +6,9 @@ export const useUsersManagementTableFacade = () => {
   const usersManagementQuery = new UsersManagementQuery();
 
   const columns = [
+    { title: 'Name', field: 'name' },
     { title: 'Email', field: 'email' },
-    { title: 'Imię', field: 'name' },
+    { title: 'Surname', field: 'surname' },
   ];
 
   const getData = (query) => {
