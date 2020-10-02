@@ -1,6 +1,6 @@
 import React from 'react';
 import { SidebarWrapper } from './../boxes-and-wrappers';
-import { TopSidebar } from './components/top-sidebar';
+import { TopSidebar } from './components';
 
 export const Sidebar = () => {
   return (
