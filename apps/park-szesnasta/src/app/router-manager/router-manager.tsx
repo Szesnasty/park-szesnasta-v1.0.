@@ -6,7 +6,7 @@ import { Redirect } from 'react-router';
 import { Routes } from '@park-szesnasta/utilities';
 import {
   MainAppWrapper,
-  SidebarWrapper,
+  Sidebar,
   MainContentWrapper,
 } from '@park-szesnasta/components';
 
@@ -16,10 +16,9 @@ export const RouterManager = () => {
   return (
     <Switch>
       <>
-        <Route path={Routes.Login.path} exact component={Login} />
         {loggedIn ? (
           <MainAppWrapper>
-            <SidebarWrapper>Menu</SidebarWrapper>
+            <Sidebar />
             <MainContentWrapper>
               <Route
                 path={Routes.Home.path}
@@ -36,6 +35,7 @@ export const RouterManager = () => {
         ) : (
           <>
             <Redirect to={Routes.Login.path} />
+            <Route path={Routes.Login.path} exact component={Login} />
           </>
         )}
       </>

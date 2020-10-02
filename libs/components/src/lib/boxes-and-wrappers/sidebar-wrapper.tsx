@@ -16,6 +16,6 @@ const SidebarWrapperStyled = styled.div`
   width: 100%;
   ${({ theme }) => `
   padding: ${theme.spacing(3.2)};
-  background: ${theme.palette.primary.dark};
+  background: ${theme.palette.primary.main};
   `}
 `;
