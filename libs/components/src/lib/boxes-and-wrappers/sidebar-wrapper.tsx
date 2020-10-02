@@ -14,7 +14,10 @@ export const SidebarWrapper: FunctionComponent = ({
 const SidebarWrapperStyled = styled.div`
   min-height: 100vh;
   width: 100%;
+  display: grid;
+  grid-auto-rows: 1fr 3fr 1fr;
   ${({ theme }) => `
   background: ${theme.palette.primary.main};
+  
   `}
 `;
