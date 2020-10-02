@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-export const TopSidebar = () => {
-  return <TopSidebarStyled>Top Sidebar</TopSidebarStyled>;
+
+type TopSidebarProps = {
+  children: React.ReactNode;
+};
+
+export const TopSidebar = ({ children }: TopSidebarProps) => {
+  return <TopSidebarStyled>{children}</TopSidebarStyled>;
 };
 
 const TopSidebarStyled = styled.div``;
