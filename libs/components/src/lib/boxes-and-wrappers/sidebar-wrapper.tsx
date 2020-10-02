@@ -15,7 +15,6 @@ const SidebarWrapperStyled = styled.div`
   min-height: 100vh;
   width: 100%;
   ${({ theme }) => `
-  padding: ${theme.spacing(3.2)};
   background: ${theme.palette.primary.main};
   `}
 `;
