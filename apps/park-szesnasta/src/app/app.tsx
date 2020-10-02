@@ -11,6 +11,7 @@ import { RouterManager } from './router-manager';
 
 export const App = () => {
   console.log(process.env.NX_URL_API);
+  const loggedIn = true;
   return (
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={MainTheme}>
