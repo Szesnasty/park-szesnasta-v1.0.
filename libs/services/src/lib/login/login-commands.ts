@@ -5,12 +5,9 @@ import {
 } from '@park-szesnasta/utilities';
 import { LOGIN_URL } from './login-api';
 import { Post } from './../axios-config/axios-methods';
-type TestingRequestModel = {
-  id: string;
-};
-type TestingResponseModel = {
-  access_token: string;
-};
+
+type TestingRequestModel = {};
+type TestingResponseModel = {};
 
 export class LoginCommands {
   URL_API: string;

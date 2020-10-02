@@ -11,6 +11,7 @@ export const RouterManager = () => {
   return (
     <Switch>
       <>
+        <Route path={Routes.Login.path} exact component={Login} />
         {loggedIn ? (
           <>
             <Route
@@ -23,12 +24,10 @@ export const RouterManager = () => {
               exact
               component={UsersManagement}
             />
-            <Route path={Routes.Login.path} exact component={Login} />
           </>
         ) : (
           <>
             <Redirect to={Routes.Login.path} />
-            <Route path={Routes.Login.path} exact component={Login} />
           </>
         )}
       </>
