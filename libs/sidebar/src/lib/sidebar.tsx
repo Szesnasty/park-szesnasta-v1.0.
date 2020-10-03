@@ -1,6 +1,7 @@
 import React from 'react';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 import {
   SidebarConfigWrapper,
@@ -10,12 +11,19 @@ import {
 } from '@park-szesnasta/components';
 
 export const Sidebar = () => {
+  const history = useHistory();
+  const handleLogout = () => {
+    localStorage.removeItem('access-token');
+    localStorage.removeItem('user-logged');
+    history.push('/login');
+  };
+
   return (
     <SidebarWrapper>
       <SidebarInfoWrapper>Top</SidebarInfoWrapper>
       <SidebarMenuListWrapper>Middle</SidebarMenuListWrapper>
       <SidebarConfigWrapper>
-        <LogoutIconStyled />
+        <LogoutIconStyled onClick={() => handleLogout()} />
       </SidebarConfigWrapper>
     </SidebarWrapper>
   );
