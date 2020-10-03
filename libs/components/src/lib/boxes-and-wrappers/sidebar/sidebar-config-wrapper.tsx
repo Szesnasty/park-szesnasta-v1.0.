@@ -11,4 +11,9 @@ export const SidebarConfigWrapper: FunctionComponent = ({
   return <SidebarConfigWrapperStyled>{children}</SidebarConfigWrapperStyled>;
 };
 
-const SidebarConfigWrapperStyled = styled.div``;
+const SidebarConfigWrapperStyled = styled.div`
+  ${({ theme }) => `
+  padding: ${theme.spacing(2)};
+  
+  `}
+`;

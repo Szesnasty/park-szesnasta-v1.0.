@@ -23,7 +23,8 @@
       "@park-szesnasta/users-management": [
         "libs/users-management/src/index.ts"
       ],
-      "@park-szesnasta/login": ["libs/login/src/index.ts"]
+      "@park-szesnasta/login": ["libs/login/src/index.ts"],
+      "@park-szesnasta/sidebar": ["libs/sidebar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,24 +1,23 @@
 import React from 'react';
 import { UsersManagement } from '@park-szesnasta/users-management';
 import { Login } from '@park-szesnasta/login';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { Routes } from '@park-szesnasta/utilities';
-import {
-  MainAppWrapper,
-  Sidebar,
-  MainContentWrapper,
-} from '@park-szesnasta/components';
+import { MainAppWrapper, MainContentWrapper } from '@park-szesnasta/components';
+import { Sidebar } from '@park-szesnasta/sidebar';
 
 export const RouterManager = () => {
-  const loggedIn = true;
+  const loggedIn = localStorage.getItem('user-logged');
+  const location = useLocation();
 
   return (
     <Switch>
       <>
+        <Route path={Routes.Login.path} exact component={Login} />
         {loggedIn ? (
           <MainAppWrapper>
-            <Sidebar />
+            {location.pathname !== Routes.Login.path && <Sidebar />}
             <MainContentWrapper>
               <Route
                 path={Routes.Home.path}
@@ -35,7 +34,6 @@ export const RouterManager = () => {
         ) : (
           <>
             <Redirect to={Routes.Login.path} />
-            <Route path={Routes.Login.path} exact component={Login} />
           </>
         )}
       </>
