@@ -4,11 +4,8 @@ import { Login } from '@park-szesnasta/login';
 import { Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { Routes } from '@park-szesnasta/utilities';
-import {
-  MainAppWrapper,
-  Sidebar,
-  MainContentWrapper,
-} from '@park-szesnasta/components';
+import { MainAppWrapper, MainContentWrapper } from '@park-szesnasta/components';
+import { Sidebar } from '@park-szesnasta/sidebar';
 
 export const RouterManager = () => {
   const loggedIn = true;
