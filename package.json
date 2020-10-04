@@ -32,7 +32,7 @@
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.20.0",
     "document-register-element": "1.13.1",
-    "formik": "^2.1.5",
+    "formik": "^2.1.7",
     "framer-motion": "^2.7.7",
     "material-table": "^1.69.0",
     "react": "16.13.1",
