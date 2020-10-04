@@ -30,6 +30,7 @@ export const useLoginUserFormFacade = () => {
       password: values.password,
     };
 
+    console.log(loginCommands.LoginUser(userLoginData));
     loginCommands
       .LoginUser(userLoginData)
       .then((res) => {

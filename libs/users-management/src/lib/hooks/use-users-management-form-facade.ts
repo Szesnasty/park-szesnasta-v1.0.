@@ -32,11 +32,11 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
       surname: values.surname,
       password: values.password,
     };
-    formikHelpers.setSubmitting(true);
 
     usersManagementCommands
       .CreateNewUser(newUser)
       .then((res) => {
+        formikHelpers.resetForm();
         notificationsDispatch({
           msg: `Stworzono nowego usera!`,
           variant: 'success',
@@ -51,9 +51,6 @@ export const useUsersManagementFormFacade = ({ tableRef }) => {
           variant: 'error',
         });
       });
-
-    formikHelpers.setSubmitting(false);
-    formikHelpers.resetForm();
   };
 
   return { validationSchema, initialValues, handleSubmitForm };
