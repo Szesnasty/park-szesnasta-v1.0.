@@ -30,11 +30,9 @@ export const useLoginUserFormFacade = () => {
       password: values.password,
     };
 
-    console.log(loginCommands.LoginUser(userLoginData));
     loginCommands
       .LoginUser(userLoginData)
       .then((res) => {
-        console.log(res);
         const accessToken = res.data?.access_token;
         const userLogged = 'true';
         localStorage.setItem('access-token', accessToken);
@@ -46,8 +44,6 @@ export const useLoginUserFormFacade = () => {
         });
       })
       .catch((err) => {
-        console.log(err);
-
         formikHelpers.resetForm();
         notificationsDispatch({
           msg: `Coś poszło nie tak...`,

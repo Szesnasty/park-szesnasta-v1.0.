@@ -13,7 +13,7 @@ export const ButtonForm = ({
   type,
 }: ButtonFormProps) => {
   const { isSubmitting } = useFormikContext();
-  console.log(isSubmitting);
+
   return (
     <Button
       disabled={isSubmitting}

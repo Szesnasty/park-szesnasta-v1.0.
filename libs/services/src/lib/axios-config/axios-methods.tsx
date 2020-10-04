@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const URL_API = process.env.NX_URL_API;
 
-const accessToken: string = localStorage.getItem('access_token');
+const accessToken: string = localStorage.getItem('access-token');
 const config = {
   headers: { Authorization: `Bearer ${accessToken}` },
 };

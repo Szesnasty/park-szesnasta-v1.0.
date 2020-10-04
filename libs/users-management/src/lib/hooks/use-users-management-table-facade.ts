@@ -20,7 +20,7 @@ export const useUsersManagementTableFacade = () => {
             resolve({
               data: res.data,
               page: 1,
-              totalCount: 22,
+              totalCount: res.data.length,
             });
           })
           .catch((err) => reject(err));

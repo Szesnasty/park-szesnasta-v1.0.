@@ -12,8 +12,9 @@ export class UsersManagementCommands {
     return axios.post<any>(`${this.URL_API}/${ADD_NEW_USER_URL}`, requestQuery);
   };
 
-  RemoveUser = (requestQuery: { id: string }) =>
-    axios.delete<any>(`${this.URL_API}/${DELETE_USER_URL}`, {
+  RemoveUser = (requestQuery: { id: string }) => {
+    return axios.delete<any>(`${this.URL_API}/${DELETE_USER_URL}`, {
       data: requestQuery,
     });
+  };
 }
