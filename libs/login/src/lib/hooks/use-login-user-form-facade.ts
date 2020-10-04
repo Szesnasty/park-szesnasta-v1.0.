@@ -30,9 +30,10 @@ export const useLoginUserFormFacade = () => {
       password: values.password,
     };
 
-    return loginCommands
+    loginCommands
       .LoginUser(userLoginData)
       .then((res) => {
+        console.log(res);
         const accessToken = res.data?.access_token;
         const userLogged = 'true';
         localStorage.setItem('access-token', accessToken);

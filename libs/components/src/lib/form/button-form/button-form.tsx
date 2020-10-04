@@ -25,7 +25,7 @@ export const ButtonForm = ({
       {children}
       {isSubmitting ? (
         <CircularProgress
-          style={{ width: '2.4rem', height: '2.4rem' }}
+          style={{ width: '2.4rem', height: '2.4rem', marginLeft: '1rem' }}
           color={'secondary'}
         />
       ) : null}

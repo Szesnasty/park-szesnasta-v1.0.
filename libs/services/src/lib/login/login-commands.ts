@@ -15,11 +15,12 @@ export class LoginCommands {
     this.URL_API = process.env.NX_URL_API;
   }
 
-  LoginUser = (requestQuery: LoginRequestModel) =>
-    axios.post<LoginResponseModel>(
+  LoginUser = async (requestQuery: LoginRequestModel) => {
+    return await axios.post<LoginResponseModel>(
       `${this.URL_API}/${LOGIN_URL}`,
       requestQuery
     );
+  };
 
   TestToken = (requestQuery: TestingRequestModel) => {
     return Post<TestingRequestModel, TestingResponseModel>(
