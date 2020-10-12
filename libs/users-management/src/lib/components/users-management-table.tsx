@@ -3,7 +3,7 @@ import MaterialTable from 'material-table';
 
 import { tableIcons } from '@park-szesnasta/components';
 
-import { GetUsersListResponseModel } from '@park-szesnasta/utilities';
+import { CreateNewUserResponseModel } from '@park-szesnasta/utilities';
 import { useUsersManagementTableFacade } from './../hooks/use-users-management-table-facade';
 
 type UsersManagementTableProps = {
@@ -19,7 +19,7 @@ export const UsersManagementTable = ({
   }
 
   return (
-    <MaterialTable<GetUsersListResponseModel>
+    <MaterialTable<CreateNewUserResponseModel>
       tableRef={tableRef}
       icons={tableIcons}
       title="Firma"

@@ -1,6 +1,9 @@
 import { UsersManagementQuery } from '@park-szesnasta/services';
-import { GetUsersListResponseModel } from '@park-szesnasta/utilities';
-import { QueryResult } from 'material-table';
+import {
+  GetUsersListResponseModel,
+  CreateNewUserResponseModel,
+} from '@park-szesnasta/utilities';
+import { QueryResult, Query } from 'material-table';
 
 export const useUsersManagementTableFacade = () => {
   const usersManagementQuery = new UsersManagementQuery();
@@ -11,16 +14,20 @@ export const useUsersManagementTableFacade = () => {
     { title: 'Surname', field: 'surname' },
   ];
 
-  const getData = (query) => {
-    return new Promise<QueryResult<GetUsersListResponseModel>>(
+  const getData = (query: Query<CreateNewUserResponseModel>) => {
+    console.log(query);
+
+    return new Promise<QueryResult<CreateNewUserResponseModel>>(
       (resolve, reject) => {
         usersManagementQuery
-          .GetUsers()
-          .then((res) => {
+          .GetUsers({
+            pageInfo: { pageSize: query.pageSize, pageNumber: query.page },
+          })
+          .then((result) => {
             resolve({
-              data: res.data,
-              page: 1,
-              totalCount: res.data.length,
+              data: result.data.items,
+              page: result.data?.pageInfo?.pageNumber,
+              totalCount: result.data?.pageInfo.total,
             });
           })
           .catch((err) => reject(err));

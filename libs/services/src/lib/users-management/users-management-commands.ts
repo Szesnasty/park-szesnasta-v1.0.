@@ -9,7 +9,10 @@ export class UsersManagementCommands {
   }
 
   CreateNewUser = (requestQuery: CreateNewUserRequestModel) => {
-    return axios.post<any>(`${this.URL_API}/${ADD_NEW_USER_URL}`, requestQuery);
+    return axios.post<{ total: number; page: number }>(
+      `${this.URL_API}/${ADD_NEW_USER_URL}`,
+      requestQuery
+    );
   };
 
   RemoveUser = (requestQuery: { id: string }) => {
