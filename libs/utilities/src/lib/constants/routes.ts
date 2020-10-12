@@ -6,12 +6,12 @@ export const Routes = {
   },
   UsersManagement: {
     path: '/users',
-    name: 'users',
+    name: 'Users',
     viewId: 'USERS',
   },
   Login: {
     path: '/login',
-    name: 'login',
+    name: 'Login',
     viewId: 'LOGIN',
   },
 };

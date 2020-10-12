@@ -40,5 +40,5 @@ const LogoutIconStyled = styled(ExitToAppOutlinedIcon)`
   ${({ theme }) => `
   color: ${theme.palette.primary.light};
   
-  `}
+  `};
 `;
