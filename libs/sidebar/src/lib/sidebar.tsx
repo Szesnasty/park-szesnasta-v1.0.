@@ -2,6 +2,7 @@ import React from 'react';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { Tooltip } from '@park-szesnasta/components';
 
 import {
   SidebarConfigWrapper,
@@ -23,7 +24,9 @@ export const Sidebar = () => {
       <SidebarInfoWrapper>Top</SidebarInfoWrapper>
       <SidebarMenuListWrapper>Middle</SidebarMenuListWrapper>
       <SidebarConfigWrapper>
-        <LogoutIconStyled onClick={() => handleLogout()} />
+        <Tooltip title={'log out'}>
+          <LogoutIconStyled onClick={() => handleLogout()} />
+        </Tooltip>
       </SidebarConfigWrapper>
     </SidebarWrapper>
   );
