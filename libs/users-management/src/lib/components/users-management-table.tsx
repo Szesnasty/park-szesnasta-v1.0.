@@ -20,11 +20,16 @@ export const UsersManagementTable = ({
 
   return (
     <MaterialTable<CreateNewUserResponseModel>
+      onSelectionChange={(rowData) => console.log(rowData)}
       tableRef={tableRef}
       icons={tableIcons}
       title="Firma"
       columns={columns}
       data={(query) => getData(query)}
+      options={{
+        paginationType: 'stepped',
+        selection: true,
+      }}
     />
   );
 };

@@ -18,10 +18,12 @@ export const SidebarNavList = () => {
             }}
             to={SidebarNavItem.to}
           >
-            {SidebarNavItem.hasIcon && (
-              <SvgIconStyled component={SidebarNavItem.icon} />
-            )}
-            {SidebarNavItem.linkName}
+            <ConstentStyled>
+              {SidebarNavItem.hasIcon && (
+                <SvgIconStyled component={SidebarNavItem.icon} />
+              )}
+              {SidebarNavItem.linkName}
+            </ConstentStyled>
           </NavLinkStyled>
         </StyledListElement>
       );
@@ -40,13 +42,23 @@ const StyledListElement = styled.li``;
 
 const NavLinkStyled = styled(NavLink)`
   display: grid;
-  align-items: center;
   text-decoration: none;
-  grid-template-columns: 4rem auto;
+
   color: #fff;
+
+  &:hover div {
+    transform: translateX(1rem);
+  }
   ${({ theme }) => `
   padding: ${theme.spacing(1)} ${theme.spacing(2)};
   `}
+`;
+
+const ConstentStyled = styled.div`
+  transition: 0.2s;
+  display: grid;
+  grid-template-columns: 4rem auto;
+  align-items: center;
 `;
 
 const SvgIconStyled = styled(SvgIcon)<{
