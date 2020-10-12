@@ -1,9 +1,9 @@
 import React from 'react';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { Tooltip } from '@park-szesnasta/components';
-
+import { SidebarMenu } from '@park-szesnasta/utilities';
 import {
   SidebarConfigWrapper,
   SidebarInfoWrapper,
@@ -19,10 +19,22 @@ export const Sidebar = () => {
     history.push('/login');
   };
 
+  const RenderSidebarNavList = () => {
+    return SidebarMenu.map((SidebarNavItem) => {
+      return (
+        <li key={SidebarNavItem.id}>
+          <NavLink to={SidebarNavItem.to}>{SidebarNavItem.linkName}</NavLink>
+        </li>
+      );
+    });
+  };
+
   return (
     <SidebarWrapper>
       <SidebarInfoWrapper>Top</SidebarInfoWrapper>
-      <SidebarMenuListWrapper>Middle</SidebarMenuListWrapper>
+      <SidebarMenuListWrapper>
+        <ul>{RenderSidebarNavList()}</ul>
+      </SidebarMenuListWrapper>
       <SidebarConfigWrapper>
         <Tooltip title={'log out'}>
           <LogoutIconStyled onClick={() => handleLogout()} />
