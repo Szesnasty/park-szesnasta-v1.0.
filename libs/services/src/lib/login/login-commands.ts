@@ -5,6 +5,7 @@ import {
 } from '@park-szesnasta/utilities';
 import { LOGIN_URL } from './login-api';
 import { Post } from './../axios-config/axios-methods';
+import { API_URL } from './../api_url';
 
 type TestingRequestModel = {};
 type TestingResponseModel = {};
@@ -12,12 +13,12 @@ type TestingResponseModel = {};
 export class LoginCommands {
   URL_API: string;
   constructor() {
-    this.URL_API = process.env.NX_URL_API;
+    // this.URL_API = process.env.NX_URL_API;
   }
 
   LoginUser = (requestQuery: LoginRequestModel) => {
     return axios.post<LoginResponseModel>(
-      `${this.URL_API}/${LOGIN_URL}`,
+      `${API_URL}/${LOGIN_URL}`,
       requestQuery
     );
   };
