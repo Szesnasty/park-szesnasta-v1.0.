@@ -1,1 +1,1 @@
-export const REQUIRED_FIELD = 'pole wymagane';
+export const REQUIRED_FIELD = 'Field is required';
