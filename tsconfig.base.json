@@ -24,7 +24,8 @@
         "libs/users-management/src/index.ts"
       ],
       "@park-szesnasta/login": ["libs/login/src/index.ts"],
-      "@park-szesnasta/sidebar": ["libs/sidebar/src/index.ts"]
+      "@park-szesnasta/sidebar": ["libs/sidebar/src/index.ts"],
+      "@park-szesnasta/store": ["libs/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
