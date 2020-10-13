@@ -11,20 +11,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { useSelector, useDispatch } from 'react-redux';
-import { StoreModel } from '@park-szesnasta/store';
-import { openStaticDrawer } from '@park-szesnasta/store';
+import { StoreModel } from '@park-szesnasta/utilities';
+import { openStaticDrawer, openDrawer } from '@park-szesnasta/store';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -109,13 +104,17 @@ export const DrawerStatic = () => {
     }
   }, [data, isStaticDrawerOpen]);
 
-  const renderList = (actionsList) => {
+  const renderList = (actionsList, data) => {
     return (
       <List>
         {actionsList.map((item, index) => (
-          <ListItem button key={item.id}>
+          <ListItem
+            onClick={() => dispatch(openDrawer(true, data, []))}
+            button
+            key={item.id}
+          >
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <DeleteOutlineIcon />
             </ListItemIcon>
             <ListItemText primary={item.name} />
           </ListItem>
@@ -136,7 +135,7 @@ export const DrawerStatic = () => {
           paper: classes.drawerPaper,
         }}
       >
-        {renderList(actionsList)}
+        {renderList(actionsList, data)}
       </Drawer>
     </div>
   );

@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { MainTheme } from '@park-szesnasta/utilities';
 import { Notifications } from '@park-szesnasta/components';
 import { RouterManager } from './router-manager';
-import { DrawerStatic } from '@park-szesnasta/drawer';
+import { DrawerStatic, Drawer } from '@park-szesnasta/drawer';
 export const App = () => {
   console.log(process.env.NX_URL_API);
   const loggedIn = true;
@@ -21,6 +21,7 @@ export const App = () => {
               <Notifications />
               <RouterManager />
               <DrawerStatic />
+              <Drawer />
             </Router>
           </CssBaseline>
         </ThemeProvider>
