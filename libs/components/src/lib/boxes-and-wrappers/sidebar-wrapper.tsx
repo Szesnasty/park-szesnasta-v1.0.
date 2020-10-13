@@ -15,7 +15,7 @@ const SidebarWrapperStyled = styled.div`
   min-height: 100vh;
   width: 100%;
   display: grid;
-  grid-auto-rows: 1fr 3fr 1fr;
+  grid-auto-rows: auto 4fr auto;
   ${({ theme }) => `
   background: ${theme.palette.primary.main};
   

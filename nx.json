@@ -49,6 +49,12 @@
     },
     "sidebar": {
       "tags": []
+    },
+    "store": {
+      "tags": []
+    },
+    "drawer": {
+      "tags": []
     }
   }
 }

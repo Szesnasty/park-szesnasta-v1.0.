@@ -12,8 +12,9 @@ export const SidebarConfigWrapper: FunctionComponent = ({
 };
 
 const SidebarConfigWrapperStyled = styled.div`
+  justify-self: flex-end;
   ${({ theme }) => `
   padding: ${theme.spacing(2)};
   
-  `}
+  `};
 `;

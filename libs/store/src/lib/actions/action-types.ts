@@ -1,0 +1,4 @@
+export const actionTypes = {
+  OPEN_STATIC_DRAWER: 'OPEN_STATIC_DRAWER',
+  CLOSE_STATIC_DRAWER: 'CLOSE_STATIC_DRAWER',
+};

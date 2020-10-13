@@ -29,7 +29,6 @@ export const useLoginUserFormFacade = () => {
       email: values.email,
       password: values.password,
     };
-    formikHelpers.setSubmitting(true);
 
     loginCommands
       .LoginUser(userLoginData)
@@ -45,15 +44,12 @@ export const useLoginUserFormFacade = () => {
         });
       })
       .catch((err) => {
-        console.log(err);
+        formikHelpers.resetForm();
         notificationsDispatch({
           msg: `Coś poszło nie tak...`,
           variant: 'error',
         });
       });
-
-    formikHelpers.setSubmitting(false);
-    formikHelpers.resetForm();
   };
 
   return { validationSchema, initialValues, handleSubmitForm };
