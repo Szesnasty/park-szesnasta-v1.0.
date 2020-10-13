@@ -5,16 +5,17 @@ import {
   PageInfoRequestModel,
 } from '@park-szesnasta/utilities';
 import { GET_USERS_LIST_URL } from './users-management-api';
+import { API_URL } from './../api_url';
 
 export class UsersManagementQuery {
   URL_API: string;
   constructor() {
-    this.URL_API = process.env.NX_URL_API;
+    // this.URL_API = process.env.NX_URL_API;
   }
 
   GetUsers = (requestQuery: { pageInfo: PageInfoRequestModel }) => {
     return axios.post<GetUsersListResponseModel>(
-      `${this.URL_API}/${GET_USERS_LIST_URL}`,
+      `${API_URL}/${GET_USERS_LIST_URL}`,
       requestQuery
     );
   };

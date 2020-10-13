@@ -1,7 +1,15 @@
+type DrawerStaticModel = {
+  isStaticDrawerOpen: boolean;
+  data: any;
+  actionsList: any;
+};
+
 type DrawerModel = {
-  isOpen: boolean;
+  isDrawerOpen: boolean;
+  data: any;
 };
 
 export type StoreModel = {
+  drawerStatic: DrawerStaticModel;
   drawer: DrawerModel;
 };
