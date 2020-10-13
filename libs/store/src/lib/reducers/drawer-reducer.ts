@@ -1,20 +1,23 @@
 import { actionTypes } from '../actions/action-types';
 
 const initialState = {
-  isOpen: false,
+  isStaticDrawerOpen: false,
+  data: null,
+  actionsList: [],
 };
 
-const openDrawer = (state, action) => {
+const openStaticDrawer = (state, action) => {
+  console.log(action);
   return {
     ...state,
-    ...action.payload,
+    ...action,
   };
 };
 
-export const drawerReducer = (state = initialState, action) => {
+export const drawerStaticReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.OPEN_DRAWER:
-      return openDrawer(state, action.payload);
+    case actionTypes.OPEN_STATIC_DRAWER:
+      return openStaticDrawer(state, action.payload);
     default:
       return state;
   }

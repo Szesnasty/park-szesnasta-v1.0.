@@ -52,6 +52,9 @@
     },
     "store": {
       "tags": []
+    },
+    "drawer": {
+      "tags": []
     }
   }
 }
