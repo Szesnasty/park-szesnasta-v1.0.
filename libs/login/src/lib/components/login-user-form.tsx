@@ -17,7 +17,6 @@ export const LoginUserForm = (props: LoginUserFormProps) => {
 
   return (
     <StyledUserManagement>
-      <h1>Login</h1>
       <Formik<InitialDataModel>
         validateOnChange
         initialValues={initialValues}
@@ -30,4 +29,6 @@ export const LoginUserForm = (props: LoginUserFormProps) => {
   );
 };
 
-const StyledUserManagement = styled.div``;
+const StyledUserManagement = styled.div`
+  width: 30vw;
+`;
