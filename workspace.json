@@ -340,6 +340,32 @@
           }
         }
       }
+    },
+    "context-actions": {
+      "root": "libs/context-actions",
+      "sourceRoot": "libs/context-actions/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/context-actions/tsconfig.lib.json",
+              "libs/context-actions/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/context-actions/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/context-actions/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

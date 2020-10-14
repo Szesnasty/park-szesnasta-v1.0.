@@ -55,6 +55,9 @@
     },
     "drawer": {
       "tags": []
+    },
+    "context-actions": {
+      "tags": []
     }
   }
 }
