@@ -1,25 +1,32 @@
 import React from 'react';
 
 import List from '@material-ui/core/List';
-
+import { OverridableComponent } from '@material-ui/core/OverridableComponent';
+import { SvgIcon, SvgIconTypeMap } from '@material-ui/core';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import styled from 'styled-components';
 
 export const RenderListOfContextActions = ({ actionsList, data }) => {
   const renderList = (actionsList, data) => {
+    let currentActionsList;
+    data?.length > 1
+      ? (currentActionsList = actionsList.filter(
+          (x) => x.isForSingleItem === true
+        ))
+      : (currentActionsList = actionsList);
+
     return (
       <List>
-        {actionsList.map((item, index) => (
+        {currentActionsList.map((item, index) => (
           <ListItem
             // onClick={() => dispatch(openDrawer(true, data, []))}
             button
             key={item.id}
           >
             <ListItemIcon>
-              <DeleteOutlineIcon />
+              <SvgIconStyled component={item.icon} />
             </ListItemIcon>
             <ListItemText primary={item.name} />
           </ListItem>
@@ -29,3 +36,12 @@ export const RenderListOfContextActions = ({ actionsList, data }) => {
   };
   return <>{renderList(actionsList, data)}</>;
 };
+
+const SvgIconStyled = styled(SvgIcon)<{
+  component: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
+}>`
+  font-size: 2.6rem;
+  ${({ theme }) => `
+    color: ${theme.palette.primary.main};
+    `}
+`;

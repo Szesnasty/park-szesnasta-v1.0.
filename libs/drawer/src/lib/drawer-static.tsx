@@ -78,16 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const DrawerStatic = () => {
   const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
   const dispatch = useDispatch();
   const { isStaticDrawerOpen, data, actionsList } = useSelector(
     (state: StoreModel) => state.drawerStatic
