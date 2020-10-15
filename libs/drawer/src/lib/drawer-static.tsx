@@ -10,16 +10,11 @@ import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import List from '@material-ui/core/List';
 
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { useSelector, useDispatch } from 'react-redux';
 import { StoreModel } from '@park-szesnasta/utilities';
 import { openStaticDrawer, openDrawer } from '@park-szesnasta/store';
+import { RenderListOfContextActions } from '@park-szesnasta/context-actions';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -104,24 +99,6 @@ export const DrawerStatic = () => {
     }
   }, [data, isStaticDrawerOpen]);
 
-  const renderList = (actionsList, data) => {
-    return (
-      <List>
-        {actionsList.map((item, index) => (
-          <ListItem
-            onClick={() => dispatch(openDrawer(true, data, []))}
-            button
-            key={item.id}
-          >
-            <ListItemIcon>
-              <DeleteOutlineIcon />
-            </ListItemIcon>
-            <ListItemText primary={item.name} />
-          </ListItem>
-        ))}
-      </List>
-    );
-  };
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -135,7 +112,7 @@ export const DrawerStatic = () => {
           paper: classes.drawerPaper,
         }}
       >
-        {renderList(actionsList, data)}
+        <RenderListOfContextActions actionsList={actionsList} data={data} />
       </Drawer>
     </div>
   );
