@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import { useSelector, useDispatch } from 'react-redux';
 import { StoreModel } from '@park-szesnasta/utilities';
+import { useSelector, useDispatch } from 'react-redux';
 import { openStaticDrawer, openDrawer } from '@park-szesnasta/store';
+import { RenderActions } from '@park-szesnasta/context-actions';
 
 const useStyles = makeStyles({
   list: {
@@ -62,7 +63,9 @@ export const Drawer = () => {
       onClose={() => dispatch(openDrawer(false, null, []))}
       onOpen={() => dispatch(openDrawer(true, null, []))}
     >
-      <div style={{ minWidth: '45vw' }}>ELO!</div>
+      <div style={{ minWidth: '45vw' }}>
+        <RenderActions />
+      </div>
     </SwipeableDrawer>
   );
 };

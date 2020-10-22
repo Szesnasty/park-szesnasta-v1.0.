@@ -7,8 +7,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { openStaticDrawer, openDrawer } from '@park-szesnasta/store';
 
 export const RenderListOfContextActions = ({ actionsList, data }) => {
+  const dispatch = useDispatch();
   const renderList = (actionsList, data) => {
     let currentActionsList;
     data?.length > 1
@@ -19,9 +22,9 @@ export const RenderListOfContextActions = ({ actionsList, data }) => {
 
     return (
       <List>
-        {currentActionsList.map((item, index) => (
+        {currentActionsList?.map((item, index) => (
           <ListItem
-            // onClick={() => dispatch(openDrawer(true, data, []))}
+            onClick={() => dispatch(openDrawer(true, data, item.value))}
             button
             key={item.id}
           >
