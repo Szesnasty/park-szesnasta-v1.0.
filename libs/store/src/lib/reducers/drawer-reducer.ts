@@ -3,7 +3,7 @@ import { actionTypes } from '../actions/action-types';
 const initialState = {
   isDrawerOpen: false,
   data: null,
-  actionsList: [],
+  actionName: '',
 };
 
 const openDrawer = (state, action) => {
@@ -15,7 +15,7 @@ const openDrawer = (state, action) => {
 
 export const drawerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.OPEN_STATIC_DRAWER:
+    case actionTypes.OPEN_DRAWER:
       return openDrawer(state, action.payload);
     default:
       return state;

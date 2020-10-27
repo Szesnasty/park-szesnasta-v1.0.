@@ -41,6 +41,7 @@ export const Drawer = () => {
     }
   }, [isStaticDrawerOpen, isDrawerOpen]);
 
+  console.log(isStaticDrawerOpen);
   const toggleDrawer = (anchor: Anchor, open: boolean) => (
     event: React.KeyboardEvent | React.MouseEvent
   ) => {

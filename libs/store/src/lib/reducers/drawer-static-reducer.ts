@@ -14,6 +14,8 @@ const openStaticDrawer = (state, action) => {
 };
 
 export const drawerStaticReducer = (state = initialState, action) => {
+  console.log(action.payload);
+  console.log(state);
   switch (action.type) {
     case actionTypes.OPEN_STATIC_DRAWER:
       return openStaticDrawer(state, action.payload);

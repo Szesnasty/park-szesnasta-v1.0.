@@ -84,6 +84,8 @@ export const DrawerStatic = () => {
     (state: StoreModel) => state.drawerStatic
   );
 
+  console.log(isStaticDrawerOpen);
+
   useEffect(() => {
     if (data?.length === 0 && isStaticDrawerOpen) {
       dispatch(openStaticDrawer(false, [], []));
