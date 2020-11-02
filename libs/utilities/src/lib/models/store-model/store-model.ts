@@ -7,6 +7,7 @@ type DrawerStaticModel = {
 type DrawerModel = {
   isDrawerOpen: boolean;
   data: any;
+  actionName: string;
 };
 
 export type StoreModel = {

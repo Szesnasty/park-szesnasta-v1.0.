@@ -18,12 +18,12 @@ export const SidebarNavList = () => {
             }}
             to={SidebarNavItem.to}
           >
-            <ConstentStyled>
+            <ContentStyled>
               {SidebarNavItem.hasIcon && (
                 <SvgIconStyled component={SidebarNavItem.icon} />
               )}
               {SidebarNavItem.linkName}
-            </ConstentStyled>
+            </ContentStyled>
           </NavLinkStyled>
         </StyledListElement>
       );
@@ -54,7 +54,7 @@ const NavLinkStyled = styled(NavLink)`
   `}
 `;
 
-const ConstentStyled = styled.div`
+const ContentStyled = styled.div`
   transition: 0.2s;
   display: grid;
   grid-template-columns: 4rem auto;

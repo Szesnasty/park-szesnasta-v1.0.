@@ -26,7 +26,8 @@
       "@park-szesnasta/login": ["libs/login/src/index.ts"],
       "@park-szesnasta/sidebar": ["libs/sidebar/src/index.ts"],
       "@park-szesnasta/store": ["libs/store/src/index.ts"],
-      "@park-szesnasta/drawer": ["libs/drawer/src/index.ts"]
+      "@park-szesnasta/drawer": ["libs/drawer/src/index.ts"],
+      "@park-szesnasta/context-actions": ["libs/context-actions/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

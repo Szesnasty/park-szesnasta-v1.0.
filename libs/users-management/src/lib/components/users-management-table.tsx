@@ -7,6 +7,8 @@ import { CreateNewUserResponseModel } from '@park-szesnasta/utilities';
 import { useUsersManagementTableFacade } from './../hooks/use-users-management-table-facade';
 import { useDispatch } from 'react-redux';
 import { openStaticDrawer } from '@park-szesnasta/store';
+import { usesrsMenagementActions } from '@park-szesnasta/utilities';
+
 type UsersManagementTableProps = {
   tableRef: React.MutableRefObject<any>;
 };
@@ -23,11 +25,7 @@ export const UsersManagementTable = ({
   return (
     <MaterialTable<CreateNewUserResponseModel>
       onSelectionChange={(rowData) =>
-        dispatch(
-          openStaticDrawer(true, rowData, [
-            { id: 1, name: 'Remove', value: 'remove' },
-          ])
-        )
+        dispatch(openStaticDrawer(true, rowData, usesrsMenagementActions))
       }
       tableRef={tableRef}
       icons={tableIcons}

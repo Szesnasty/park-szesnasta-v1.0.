@@ -12,16 +12,10 @@ export const openStaticDrawer = (
   };
 };
 
-export const closeStaticDrawer = (isOpen) => {
-  return {
-    type: actionTypes.CLOSE_STATIC_DRAWER,
-  };
-};
-
 //  DRAWER
-export const openDrawer = (isDrawerOpen: boolean, data, actionsList) => {
+export const openDrawer = (isDrawerOpen: boolean, data, actionName) => {
   return {
-    type: actionTypes.OPEN_STATIC_DRAWER,
-    payload: { isDrawerOpen, data, actionsList },
+    type: actionTypes.OPEN_DRAWER,
+    payload: { isDrawerOpen, data, actionName },
   };
 };
