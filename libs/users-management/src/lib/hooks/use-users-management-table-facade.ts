@@ -15,8 +15,6 @@ export const useUsersManagementTableFacade = () => {
   ];
 
   const getData = (query: Query<CreateNewUserResponseModel>) => {
-    console.log(query);
-
     return new Promise<QueryResult<CreateNewUserResponseModel>>(
       (resolve, reject) => {
         usersManagementQuery
