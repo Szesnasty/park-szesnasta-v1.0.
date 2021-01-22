@@ -25,7 +25,16 @@ export const useUsersManagementTableFacade = () => {
           })
           .then((result) => {
             resolve({
-              data: result.data.items,
+              // data: result.data.items,
+              data: [
+                {
+                  id: '3123',
+                  name: 'Łukasz',
+                  surname: 'Ja',
+                  email: 'lukasz@o2.pl',
+                  password: '32',
+                },
+              ],
               page: result.data?.pageInfo?.pageNumber,
               totalCount: result.data?.pageInfo.total,
             });
