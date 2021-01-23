@@ -1,7 +1,6 @@
 import React from 'react';
-import MaterialTable from 'material-table';
 
-import { tableIcons } from '@park-szesnasta/components';
+import { tableIcons, Table } from '@park-szesnasta/components';
 
 import { CreateNewUserResponseModel } from '@park-szesnasta/utilities';
 import { useUsersManagementTableFacade } from './../hooks/use-users-management-table-facade';
@@ -23,7 +22,7 @@ export const UsersManagementTable = ({
   }
 
   return (
-    <MaterialTable<CreateNewUserResponseModel>
+    <Table<CreateNewUserResponseModel>
       onSelectionChange={(rowData) =>
         dispatch(openStaticDrawer(true, rowData, usesrsMenagementActions))
       }
@@ -31,7 +30,15 @@ export const UsersManagementTable = ({
       icons={tableIcons}
       title="Firma"
       columns={columns}
-      data={(query) => getData(query)}
+      data={[
+        {
+          id: '3123',
+          name: 'Łukasz',
+          surname: 'Ja',
+          email: 'lukasz@o2.pl',
+          password: '32',
+        },
+      ]}
       options={{
         paginationType: 'stepped',
         selection: true,
