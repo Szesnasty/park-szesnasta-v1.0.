@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { useLoginUserFormFacade } from '../hooks/use-login-user-form-facade';
 import { InitialDataModel } from '../hooks/use-login-user-form-facade';
 import { RenderLoginUserForm } from './render-login-user-form';
+import { Typography } from '@material-ui/core';
 
 type LoginUserFormProps = {};
 
@@ -17,6 +18,7 @@ export const LoginUserForm = (props: LoginUserFormProps) => {
 
   return (
     <StyledUserManagement>
+      <Typography>top secret: admin@admin.com/admin</Typography>
       <Formik<InitialDataModel>
         validateOnChange
         initialValues={initialValues}

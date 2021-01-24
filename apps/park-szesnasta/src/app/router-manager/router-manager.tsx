@@ -8,8 +8,8 @@ import { MainAppWrapper, MainContentWrapper } from '@park-szesnasta/components';
 import { Sidebar } from '@park-szesnasta/sidebar';
 
 export const RouterManager = () => {
-  // const loggedIn = localStorage.getItem('user-logged');
-  const loggedIn = true;
+  const loggedIn = localStorage.getItem('user-logged');
+  // const loggedIn = true;
   const location = useLocation();
 
   return (
