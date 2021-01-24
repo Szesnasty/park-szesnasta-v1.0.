@@ -30,15 +30,7 @@ export const UsersManagementTable = ({
       icons={tableIcons}
       title="Firma"
       columns={columns}
-      data={[
-        {
-          id: '3123',
-          name: 'Łukasz',
-          surname: 'Ja',
-          email: 'lukasz@o2.pl',
-          password: '32',
-        },
-      ]}
+      data={(query) => getData(query)}
       options={{
         paginationType: 'stepped',
         selection: true,
