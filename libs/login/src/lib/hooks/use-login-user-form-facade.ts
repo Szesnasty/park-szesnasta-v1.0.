@@ -15,8 +15,8 @@ const validationSchema = yup.object<InitialDataModel>({
 export const useLoginUserFormFacade = () => {
   const history = useHistory();
   const initialValues = {
-    email: '',
-    password: '',
+    email: 'admin@admin.com',
+    password: 'admin',
   };
 
   const loginCommands = new LoginCommands();
