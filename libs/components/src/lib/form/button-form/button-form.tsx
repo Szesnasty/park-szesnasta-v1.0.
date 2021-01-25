@@ -11,9 +11,10 @@ export const ButtonForm = ({
   onClick,
   variant = 'contained',
   type,
+  form,
 }: ButtonFormProps) => {
   const { isSubmitting } = useFormikContext();
-
+  console.log(isSubmitting);
   return (
     <Button
       disabled={isSubmitting}
@@ -21,6 +22,7 @@ export const ButtonForm = ({
       color={color}
       onClick={onClick}
       type={type}
+      form={form}
     >
       {children}
       {isSubmitting ? (

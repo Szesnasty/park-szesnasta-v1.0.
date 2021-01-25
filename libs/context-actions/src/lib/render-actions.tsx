@@ -1,10 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { StoreModel, usesrsMenagementActions } from '@park-szesnasta/utilities';
+
 import {
   USERS_MANAGEMENT_DELETE,
   USERS_MANAGEMENT_EDIT,
 } from '@park-szesnasta/utilities';
+import { DeleteUsers } from './actions/users';
 
 export const RenderActions = () => {
   const { data, actionName, handleRefreshData } = useSelector(
@@ -14,7 +16,7 @@ export const RenderActions = () => {
   console.log(actionName);
   switch (actionName) {
     case USERS_MANAGEMENT_DELETE:
-      return <div onClick={() => handleRefreshData()}>Delete</div>;
+      return <DeleteUsers handleRefreshData={handleRefreshData} data={data} />;
 
     case USERS_MANAGEMENT_EDIT:
       return <div>Edit</div>;
