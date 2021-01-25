@@ -10,7 +10,11 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { openStaticDrawer, openDrawer } from '@park-szesnasta/store';
 
-export const RenderListOfContextActions = ({ actionsList, data }) => {
+export const RenderListOfContextActions = ({
+  actionsList,
+  data,
+  handleRefreshData,
+}) => {
   const dispatch = useDispatch();
   const renderList = (actionsList, data) => {
     let currentActionsList;
@@ -20,11 +24,14 @@ export const RenderListOfContextActions = ({ actionsList, data }) => {
         ))
       : (currentActionsList = actionsList);
 
+    console.log(currentActionsList);
     return (
       <List>
         {currentActionsList?.map((item, index) => (
           <ListItem
-            onClick={() => dispatch(openDrawer(true, data, item.value))}
+            onClick={() =>
+              dispatch(openDrawer(true, data, item.value, handleRefreshData))
+            }
             button
             key={item.id}
           >

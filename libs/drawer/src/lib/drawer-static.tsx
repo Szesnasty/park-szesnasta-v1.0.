@@ -80,9 +80,12 @@ export const DrawerStatic = () => {
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  const { isStaticDrawerOpen, data, actionsList } = useSelector(
-    (state: StoreModel) => state.drawerStatic
-  );
+  const {
+    isStaticDrawerOpen,
+    data,
+    actionsList,
+    handleRefreshData,
+  } = useSelector((state: StoreModel) => state.drawerStatic);
 
   console.log(isStaticDrawerOpen);
 
@@ -105,7 +108,11 @@ export const DrawerStatic = () => {
           paper: classes.drawerPaper,
         }}
       >
-        <RenderListOfContextActions actionsList={actionsList} data={data} />
+        <RenderListOfContextActions
+          actionsList={actionsList}
+          data={data}
+          handleRefreshData={handleRefreshData}
+        />
       </Drawer>
     </div>
   );

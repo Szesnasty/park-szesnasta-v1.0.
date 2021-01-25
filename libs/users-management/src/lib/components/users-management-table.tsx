@@ -21,10 +21,22 @@ export const UsersManagementTable = ({
     tableRef?.current.onQueryChange();
   }
 
+  const handleRefreshTable = () => {
+    if (tableRef.current != null) {
+      tableRef?.current.onQueryChange();
+    }
+  };
   return (
     <Table<CreateNewUserResponseModel>
       onSelectionChange={(rowData) =>
-        dispatch(openStaticDrawer(true, rowData, usesrsMenagementActions))
+        dispatch(
+          openStaticDrawer(
+            true,
+            rowData,
+            usesrsMenagementActions,
+            handleRefreshTable
+          )
+        )
       }
       tableRef={tableRef}
       icons={tableIcons}
